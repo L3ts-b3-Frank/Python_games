@@ -1,0 +1,23 @@
+#Jurrasic Park Message with 3 guesses.
+
+text = input("What is the magic word? ")
+
+correct_text = "Please"
+
+error_message1 = """Ah ah ah, You didn't say the magic word...
+"""
+error_message2 = """Incorrect, try again."""
+
+guess_count = 1
+
+while text != correct_text:
+  guess_count += 1
+  if guess_count <=3:
+    print(error_message2)
+    text = input("What is the magic word? ")
+  elif guess_count >=4:
+    print(error_message1*100)
+    break
+
+if text == correct_text:
+  print(f"Good for you. You guessed {correct_text}.")
